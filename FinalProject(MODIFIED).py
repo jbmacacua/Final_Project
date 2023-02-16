@@ -32,6 +32,21 @@ def take_command():
         pass
     return command
 
+#Add bubble sort command
+bubblelist = [97, 23, 100, 88, 66, 84, 7, 21, 52, 17]
+
+for elements in range(len(bubblelist)-1):
+    for element in range (len(bubblelist)-1):
+        if bubblelist[element] > bubblelist[element+1]:
+            bubblelist[element], bubblelist[element+1] = bubblelist[element+1], bubblelist[element]
+
+#Add Selection sort command
+sellist = [97, 23, 100, 88, 66, 84, 7, 21, 52, 17]
+for element in range (len(sellist)):
+    min_value = min(sellist[element:])
+    min_index = sellist.index(min_value)
+    sellist[element], sellist[min_index] = sellist[min_index], sellist[element]
+
 #Give commands to alexza
 def run_alexa():
     command = take_command()
