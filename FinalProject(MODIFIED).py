@@ -12,6 +12,9 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
+# Create an empty dictionary to store data on song requests
+song_data = {}
+
 #Make alexa talk
 def talk(text):
     engine.say(text)
