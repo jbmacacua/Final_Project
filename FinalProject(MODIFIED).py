@@ -1,3 +1,4 @@
+#Import the packages needed
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -5,17 +6,18 @@ import datetime
 import wikipedia
 import pyjokes
 
+#Detect the input voices
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-
+#Make alexa talk
 def talk(text):
     engine.say(text)
     engine.runAndWait()
 
-
+#Make alexa recogrize the commands
 def take_command():
     try:
         with sr.Microphone() as source:
@@ -30,7 +32,7 @@ def take_command():
         pass
     return command
 
-
+#Give commands to alexza
 def run_alexa():
     command = take_command()
     print(command)
@@ -55,6 +57,6 @@ def run_alexa():
     else:
         talk('Please say the command again.')
 
-
+#Run alexa continouosly
 while True:
     run_alexa()
