@@ -54,3 +54,5 @@ def run_alexa():
     else:
         talk('Please say the command again.')
 
+while True:
+    run_alexa()
