@@ -35,6 +35,27 @@ def take_command():
         pass
     return command
 
+#Create a log for song request
+def log_song_request(song):
+    # Get the current hour of the day
+    hour = datetime.datetime.now().hour
+
+    # Increment the count for this song in the song_data dictionary
+    if song in song_data:
+        song_data[song][hour] += 1
+    else:
+        song_data[song] = [0] * 24
+        song_data[song][hour] = 1
+
+
+def plot_song_data():
+    # Create a line chart for each song in the song_data dictionary
+    for song, data in song_data.items():
+        print(song, data)
+
+    # Configure the plot
+    print("Plotting...")
+
 #Add bubble sort command
 bubblelist = [97, 23, 100, 88, 66, 84, 7, 21, 52, 17]
 
